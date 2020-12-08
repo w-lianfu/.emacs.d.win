@@ -1,5 +1,10 @@
-;; ------ 设置文件模式 ------
+;;; package --- Summary
+;;; Commentary:
 
+
+;;; Code:
+
+;; ------ 设置文件模式 ------
 (use-package css-mode)
 (use-package sass-mode)
 (use-package scss-mode)
@@ -43,3 +48,5 @@
 (add-to-list 'auto-mode-alist '("\\[._]?g?vimrc\\'" . vimrc-mode))
 
 (provide 'file-mode)
+
+;;; file-mode.el ends here

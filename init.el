@@ -1,21 +1,37 @@
+;;; package --- Summary
+;;; Commentary:
+
 ;; 官方源
 ;;(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
 ;;			 ("melpa" . "https://melpa.org/packages/")))
+
 ;; Emacs China 源
 ;;(setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
 ;;			 ("melpa" . "http://elpa.emacs-china.org/melpa/")))
+
+;;; Code:
 ;; 腾讯源
 (setq package-archives '(("gnu"   . "http://mirrors.cloud.tencent.com/elpa/gnu/")
                          ("melpa" . "http://mirrors.cloud.tencent.com/elpa/melpa/")))
-;; 网易源
+
 ;; 清华源
 ;;(setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
 ;;                         ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+
+
 (package-initialize)
 (package-refresh-contents)
 
+
 (require 'use-package)
 (add-to-list 'load-path "~/.emacs.d/user-config/")
+
+
+;; ------ GC 优化方案 ------
+(require 'init-gc)
+
+;; ------ 设置屏幕宽高 ------
+(require 'init-size)
 
 ;; ------ 基本配置 ------
 (require 'init-basic)
@@ -23,8 +39,14 @@
 ;; ------ 设置缩进 ------
 (require 'init-indent)
 
+;; ------ 设置 Dashboard ------
+(require 'init-dashboard)
+
 ;; ------ 默认配置 ------
 (require 'init-default)
+
+;; ------ 最近打开的文件 ------
+(require 'init-recentf)
 
 ;; ------ 修改字体 ------
 (require 'init-font)
@@ -55,6 +77,9 @@
 
 ;; ------ 函数跳转 ------
 (require 'init-jump)
+
+;; ------ 开启 flycheck 检查 ------
+;; (require 'init-check)
 
 ;; ------ emms ------
 (require 'init-emms)
@@ -118,7 +143,7 @@
 	 '("#ffb4ac" "#ddaa6f" "#e5c06d" "#39454b" "#dce9f1" "#3e3e45" "#7ec98f" "#e5786d" "#834c98"))
  '(objed-cursor-color "#CC6666")
  '(package-selected-packages
-	 '(swiper cyberpunk-2019-theme cyberpunk-theme moe-theme afternoon-theme gruvbox-theme vimrc-mode go-mode json-mode rust-mode markdown-mode typescript-mode sass-mode scss-mode ample-theme helm-themes ace-jump-mode vlc emms ag iedit mew w3m peacock-theme doom-themes emmet-mode treemacs-icons-dired treemacs-projectile treemacs-evil autopair dashboard soft-stone-theme material-theme birds-of-paradise-plus-theme ubuntu-theme zenburn-theme solarized-theme spacemacs-theme counsel rjsx-mode js2-mode auto-complete helm-projectile tide popwin company web-mode yasnippet magit ivy treemacs neotree evil monokai-theme dracula-theme helm disable-mouse))
+	 '(gcmh avy flycheck swiper cyberpunk-2019-theme cyberpunk-theme moe-theme afternoon-theme gruvbox-theme vimrc-mode go-mode json-mode rust-mode markdown-mode typescript-mode sass-mode scss-mode ample-theme helm-themes ace-jump-mode vlc emms ag iedit mew w3m peacock-theme doom-themes emmet-mode treemacs-icons-dired treemacs-projectile treemacs-evil autopair dashboard soft-stone-theme material-theme birds-of-paradise-plus-theme ubuntu-theme zenburn-theme solarized-theme spacemacs-theme counsel rjsx-mode js2-mode auto-complete helm-projectile tide popwin company web-mode yasnippet magit ivy treemacs neotree evil monokai-theme dracula-theme helm disable-mouse))
  '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e"))
  '(pos-tip-background-color "#2a2a2a")
  '(pos-tip-foreground-color "#939393")
@@ -141,3 +166,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;;; init.el ends here

@@ -1,3 +1,9 @@
+;;; package --- Summary
+;;; Commentary:
+
+
+;;; Code:
+
 ;; ------ 设置缩进 ------
 
 (setq-default
@@ -16,7 +22,8 @@
   js-indent-offset 2
   jsx-indent-offset 2
   typescript-indent-offset 2
-  javascript-indent-offset 2)
+  javascript-indent-offset 2
+	rust-indent-offset 2)
 
 
 ;; ------ 旧的尝试-备份 ------
@@ -41,3 +48,5 @@
 
 
 (provide 'init-indent)
+
+;;; init-indent.el ends here

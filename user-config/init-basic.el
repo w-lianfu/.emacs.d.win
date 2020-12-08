@@ -1,17 +1,18 @@
-;; ------ 基本配置 ------
+;;; package --- Summary
+;;; Commentary:
 
-;; ------ 设置默认屏幕宽高 ------
 
-(add-to-list 'default-frame-alist '(height . 56))
-(add-to-list 'default-frame-alist '(width . 130))
-(add-to-list 'default-frame-alist '(left . 120))
-(add-to-list 'default-frame-alist '(top . 30))
-
+;;; Code:
 
 ;; 显示行号
-(global-linum-mode t)
+;; (global-linum-mode t)
+(global-display-line-numbers-mode t)
 ;; 高亮当前行
 (global-hl-line-mode t)
+;; 高亮当前行背景色
+(set-face-background 'hl-line "#094771")
+;; 高亮当前行时保留语法高亮
+(set-face-background 'highlight nil)
 ;; 关闭工具栏
 (tool-bar-mode -1)
 ;; 关闭滚动轴
@@ -36,6 +37,9 @@
 ;; 编辑时禁用触摸板与鼠标
 ;; 需要安装plugin: disable-mouse
 (global-disable-mouse-mode t)
+
+;; 括号匹配高亮
+(show-paren-mode 1)
 ;; 关闭自动生产备份文件
 (setq make-backup-files nil)
 ;; 关闭自动保存文件
@@ -46,9 +50,9 @@
 ;; 设置编码
 (set-language-environment "UTF-8")
 ;; 显示时间
-(display-time-mode 1)
-(setq display-time-24hr-format t)
-(setq display-time-day-and-date t)
+;; (display-time-mode 1)
+;; (setq display-time-24hr-format t)
+;; (setq display-time-day-and-date t)
 ;; 自动将光标移动到新创建的窗口中
 (require 'popwin)
 (popwin-mode 1)
@@ -69,3 +73,5 @@
 
 
 (provide 'init-basic)
+
+;;; init-basic.el ends here
